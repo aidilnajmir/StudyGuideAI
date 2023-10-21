@@ -24,7 +24,7 @@ def extract_text(uploaded_file):
     return text
 
 def summarize_text(text):
-    openai.api_key = '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'
+    openai.api_key = 'API_KEY'
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=f"Provide key points of this text in bullet points and generate 10 multiple choice questions and their answers as a study guide: '{text}'",
