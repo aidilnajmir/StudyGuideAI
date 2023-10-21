@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Study Material</title>
+</head>
+<body>
+    <h1>Upload Study Material</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Choose a file:</label>
+        <input type="file" name="file" accept=".pdf,.jpg,.jpeg" required>
+        <button type="submit">Upload</button>
+    </form>
+    {% if summary %}
+        <h2>Summary</h2>
+        <p>{{ summary }}</p>
+        <h3> extract</h3>
+        <p>{{extract}}</p>
+    {% endif %}
+</body>
+</html>
