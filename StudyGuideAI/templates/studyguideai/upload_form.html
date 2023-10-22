@@ -13,10 +13,8 @@
         <button type="submit">Upload</button>
     </form>
     {% if summary %}
-        <h2>Summary</h2>
-        <p>{{ summary }}</p>
-        <h3> extract</h3>
-        <p>{{extract}}</p>
+        <a href="{% url 'download_pdf' %}">Download PDF</a>
+      
     {% endif %}
 </body>
 </html>
