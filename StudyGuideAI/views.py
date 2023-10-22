@@ -36,7 +36,7 @@ def extract_text(uploaded_file):
     return text
 
 def summarize_text(text):
-    openai.api_key = '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'
+    openai.api_key = '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'
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=f"Provide key points of this text in bullet points and 10 multiple choice questions with answers (add <br /> as string after each keypoint,question,answer choice, and answer. add <br /> as string before each question add <br /> as string before the first keypoint. add <br /> <br /> as string after the last keypoint <): '{text}'",
