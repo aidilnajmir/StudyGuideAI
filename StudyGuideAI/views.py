@@ -15,7 +15,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph
 summarized_text = ""
 
 def home(request):
-    return render(request, 'studyguideai/home.html')  # You can create a 'home.html' template
+    return render(request, 'studyguideai/home.html')  
 
 def upload_material(request):
     global summarized_text
@@ -36,11 +36,12 @@ def extract_text(uploaded_file):
     return text
 
 def summarize_text(text):
-    openai.api_key = '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'
+    #apikey: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
+    openai.api_key = ''
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=f"Provide key points of this text in bullet points and 10 multiple choice questions with answers (add <br /> as string after each keypoint,question,answer choice, and answer. add <br /> as string before each question add <br /> as string before the first keypoint. add <br /> <br /> as string after the last keypoint <): '{text}'",
-        max_tokens=1000  # Adjust as needed
+        max_tokens=1000  
     )
     return response.choices[0].text
 
